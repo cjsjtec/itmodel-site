@@ -4,6 +4,7 @@
 
 		$('#form').on('submit', function(event) {
 			event.preventDefault();
+
 			var email = $('#email').val();
 			var password = $('#password').val();
 
@@ -12,11 +13,9 @@
 				return;
 			}
 
-			var data = {
-				email: email,
-				password: password
-			}
-
+			var data = new FormData()
+			data.append('email', email);
+			data.append('password', password);
 			var request = send(data, 'POST', '/auth/login');
 			request.done(responseSuccess);
 			request.fail(responseFail);

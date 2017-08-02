@@ -6,7 +6,7 @@
 			authorized()
 		} );
 
-		$('#btn-logout').on('click', logout);
+		$('.btn-logout').on('click', logout);
 
 		function logout() {
 			var request = send(null, 'POST', '/auth/logout');
@@ -44,7 +44,7 @@
         }
 
         function getProducts() {
-            var request = send({includes: 'categories'}, 'GET', '/products');
+            var request = sendDefault({includes: 'categories'}, 'GET', '/products');
             request.done(mountTable);
 
             request.fail(function(response) {
@@ -71,7 +71,7 @@
                           "<td>"+data[i].price+"</td>"+
                           "<td>"+tdCategory.substring(0, tdCategory.length -2)+"</td>"+
                           "<td style='text-align: right;'>"+
-                            "<i class='fa fa-pencil-square-o  icon-menager-product text-info '></i>"+
+                            "<i class='fa fa-pencil-square-o  icon-menager-product text-info'  data-id="+data[i].id+"></i>"+
                             "<i class='fa fa-trash icon-menager-product text-danger gap-left-15' data-id="+data[i].id+"></i>"+
                           "</td>"+
                         "</tr>";
@@ -79,6 +79,13 @@
 
         	$('#tb-products tbody').html(html);
         	$('.fa-trash').on('click', deleteProduct)
+        	$('.fa-pencil-square-o').on('click', updateProduct)
+        }
+
+        function updateProduct(event) {
+        	var $target = $(event.target);
+        	var id = $target.data('id');
+        	window.location = 'manager-product.html?id='+id;
         }
 
         function deleteProduct(event) {
