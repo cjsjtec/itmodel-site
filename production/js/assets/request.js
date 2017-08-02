@@ -1,5 +1,5 @@
 function send(data, method, route) {
-	var baseUrl = 'http://api.itmodel.dev/api';
+	var baseUrl = 'http://api.itmodel.newprogsoftwares.com.br/api';
 
 	return $.ajax({
 		url: baseUrl + route,
@@ -14,7 +14,7 @@ function send(data, method, route) {
 }
 
 function sendDefault(data, method, route) {
-	var baseUrl = 'http://api.itmodel.dev/api';
+	var baseUrl = 'http://api.itmodel.newprogsoftwares.com.br/api';
 
 	return $.ajax({
 		url: baseUrl + route,
