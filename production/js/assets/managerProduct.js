@@ -42,7 +42,7 @@
 			}
 
 			form.append('name', $('#name').val());
-			form.append('price', $('#price').val());
+			form.append('price', $('#price').val().replace(',', '.'));
 
 			var id = $('#productUpdate').val();
 
