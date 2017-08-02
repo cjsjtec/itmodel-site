@@ -17,6 +17,7 @@
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- Animate.css -->
     <link href="../vendors/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../vendors/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
@@ -30,19 +31,20 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
-              <h1>Login Form</h1>
+            <form name="form" id="form" >
+              <h1>Login</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="text" class="form-control" name="email" id="email" placeholder="E-Mail" required="true" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" minlength="8" name="password" id="password" placeholder="Senha" required="true" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
+                <button class="btn btn-primary" id="btn-login"> Log in</button>
+                <!--<a class="reset_pass" href="#register">Lost your password?</a>-->
               </div>
 
+              <!--
               <div class="clearfix"></div>
 
               <div class="separator">
@@ -58,10 +60,12 @@
                   <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                 </div>
               </div>
+              -->
             </form>
           </section>
         </div>
 
+        <!--
         <div id="register" class="animate form registration_form">
           <section class="login_content">
             <form>
@@ -97,7 +101,15 @@
             </form>
           </section>
         </div>
+        -->
       </div>
     </div>
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="js/assets/services/auth-service.js"></script>
+    <script type="text/javascript" src="js/assets/request.js"></script>
+    <script src="../vendors/sweetalert2/dist/sweetalert2.min.js"></script>
+    <script type="text/javascript" src="js/assets/login.js"></script>
+
   </body>
 </html>
+
